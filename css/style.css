@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+/* global  property*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  
+
+}
+body{
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.container{
+    max-width: 90%;
+    margin: auto;
+}
+
+
+
+/* end global */
+
+
+/* start header */
+
+.header{
+    position: relative;
+    top: 0;
+    height:90vh;
+}
+
+.logo{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+}
+nav{position: relative;  
+
+    padding: 1% 0;
+    font-size: 1.2em;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+.menu{
+    width: 20%;
+}
+.menu>ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.menu>ul>*{
+    
+    margin: 0 9%;
+}
+.register{
+    width: 18%;
+}
+.register>ul{
+    
+    display: flex;
+    list-style: none;
+
+}
+.register>ul li{
+    
+    margin: 0 2%;
+}
+
+.register>ul>*{
+    margin: 0 3%;
+}
+
+.toggle{
+    display: none;
+}
+
+.nav-list>ul li a:hover {
+    color: rgb(241, 108, 31);
+    transition: color 0.3s;
+}
+
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    
+    background-image:  url(../images/banerblog.jpg) ;
+    background-position:  top ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+
+/* end header */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* login form page */
+.connect{
+ 
+    
+    background-image:  url(../images/login-background.jpg) ;
+    background-position:  top ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.contact-form{
+position: absolute;
+top: 55%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 22%;
+padding: 3% 2%;
+background: rgba(0, 0, 0, 0.6); 
+}
+
+.contact-form h2{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10% 0;
+}
+
+
+.contact-form label{
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.contact-form input{
+  width: 100%;
+  margin-bottom: 6%;
+}
+
+.contact-form input[type=email],
+.contact-form input[type=password]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 50px;
+    color: #fff;
+    font-size: 1em;
+}
+
+ .btn-sign-in{
+     height: 30px;
+     color: #fff;
+     font-size: 1em;
+     cursor: pointer;
+     border-radius: 25px;
+     border: none;
+     outline: none;
+     margin-top: 10%;
+     width: 100%;
+     background:   rgb(241, 108, 31);
+ }
+
+.avatar{
+    position: absolute;
+
+    height: 90px;
+    width: 90px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* end login form page */
+
+
+/* media screen tablet */
+@media screen and (min-width:767px) and (max-width:1023px){
+/* start header */
+.header{
+    padding: 4% -1px;
+}
+nav{padding: 2%;
+    flex-direction: column;
+    background-color: #111;
+}
+.menu>ul{
+    flex-direction: column;
+}
+.register>ul{
+    flex-direction: column;
+}
+.toggle{
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    display: block;
+}
+.hide{
+    display: none;
+    transition: 0.5s;
+}
+.show{
+    display: block;
+    transition: 0.5s;
+}
+.nav-list>ul li {
+    margin: 5% 0;
+}
+/* end header */
+
+
+/* form sign in page */
+
+.contact-form{
+    width: 35%;
+}
+.connect{
+    height: 100vh;
+}
+/*  end form sign in page */
+}
+
+
+/* media phone */
+@media screen and (max-width:767px) {
+    /* start header */
+ 
+    .header{
+        padding: 3% -1px;
+    }
+    nav{padding: 3%;
+        background-color: #111;
+        flex-direction: column;
+    }
+    .menu>ul{
+        flex-direction: column;
+    }
+  
+    .register>ul{
+        flex-direction: column;
+    }
+    .toggle{
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        display: block;
+    }
+    .hide{
+        display: none;
+        transition: 2s;
+    }
+    .show{
+        display: block;
+        transition: 0.5s;
+    }
+    .nav-list>ul li {
+        margin: 10% 0;
+    }
+    /* end header */
+
+
+
+
+
+    /* form signin page */
+    .contact-form{
+        margin-top: 4%;
+        width: 70%;
+    }
+    .connect{
+        height: 100vh;
+    }
+    /* end form */
+}
