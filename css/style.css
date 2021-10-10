@@ -128,15 +128,16 @@ nav{position: relative;
     background-position:  top ;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 
 }
 
 .contact-form{
 position: absolute;
-top: 55%;
+top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
-width: 22%;
+width: 25%;
 padding: 3% 2%;
 background: rgba(0, 0, 0, 0.6); 
 }
@@ -160,6 +161,7 @@ background: rgba(0, 0, 0, 0.6);
 }
 
 .contact-form input[type=email],
+.contact-form input[type=text],
 .contact-form input[type=password]{
     border: none;
     border-bottom: 1px solid #fff;
@@ -195,6 +197,10 @@ background: rgba(0, 0, 0, 0.6);
 
 /* end login form page */
 
+
+/* register form page */
+
+/* end register form */
 
 /* media screen tablet */
 @media screen and (min-width:767px) and (max-width:1023px){
@@ -286,6 +292,10 @@ nav{padding: 2%;
 
 
     /* form signin page */
+    .avatar{
+        height: 50px;
+        width: 50px;
+    }
     .contact-form{
         margin-top: 4%;
         width: 70%;
