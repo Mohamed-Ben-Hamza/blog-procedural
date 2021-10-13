@@ -58,14 +58,18 @@ nav{position: relative;
 }
 .menu>ul>*{
     
-    margin: 0 9%;
+    margin: 0 8%;
 }
 .register{
-    width: 18%;
+    width: 28%;
+    text-align: center;
+   
+    
 }
 .register>ul{
-    
+
     display: flex;
+    justify-content: space-evenly;
     list-style: none;
 
 }
@@ -194,13 +198,29 @@ background: rgba(0, 0, 0, 0.6);
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.flush-message{
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    background-color: limegreen;
+    font-size: 1.3em;
+}
 
 /* end login form page */
 
 
 /* register form page */
-
+.errors{
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-size: 1.1em;
+}
 /* end register form */
+
+
+
+
 
 /* media screen tablet */
 @media screen and (min-width:767px) and (max-width:1023px){
@@ -291,7 +311,7 @@ nav{padding: 2%;
 
 
 
-    /* form signin page */
+    /* form sign in page */
     .avatar{
         height: 50px;
         width: 50px;

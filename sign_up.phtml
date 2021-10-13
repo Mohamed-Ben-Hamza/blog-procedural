@@ -45,13 +45,38 @@
         <h2>Sign up</h2>
 
         <form action="" method="post">
-            <label for="">UserName</label>
-            <input type="text" placeholder="Enter UserName" name="username">
+            
+           
+            <div class="errors" >
+                <label for="">UserName</label>
+                <?php if(isset($errors['username'])) :?><div><?= $errors['username'];?></div>
+         
+                <?php endif;?>
+
+                </div>
+            <input type="text" placeholder="Enter UserName" name="username"    value=<?php if(isset($_POST['username'])) : ?>
+            <?=$_POST['username']?>
+            <?php endif ;?>> 
+             
+            <div class="errors">
             <label for="">Email</label>
-            <input type="email" placeholder="Enter Email" name="email">
+            <?php if(isset($errors['email'])) :?><div><?= $errors['email'];?></div><?php endif;?>
+            </div>
+
+            <input type="text" placeholder="Enter Email" name="email"  value=<?php if(isset($_POST['email'])) : ?>
+            <?=$_POST['email']?>
+            <?php endif ;?> >
+         
+            
+            <div class="errors">
             <label for="">Password</label>
+            <?php if(isset($errors['password'])) :?><div><?= $errors['password'];?></div><?php endif;?>
+            </div>
             <input type="password" placeholder="Enter Password" name="password">
-            <button class="btn-sign-in"type="submit">Sign Up</button>
+            
+            <button class="btn-sign-in"type="submit" name="valider">Sign Up</button>
+           
+            
         </form>
     </div>
 
