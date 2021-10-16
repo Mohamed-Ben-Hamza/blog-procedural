@@ -27,8 +27,12 @@
                     <ul class="list-register">
                        
                             <?php if(isset($_SESSION['user'])):?>
+                                <?php if($_SESSION['user']['admin']==1):?>
                                     
-                                <li><a href="sign_up.php"><i class="fas fa-user"></i> <?=$_SESSION['user']['username']?></a></li>
+                                <li><a href="admin/dashboard.php"><i class="fas fa-user"></i> <?=$_SESSION['user']['username']?></a></li>
+                                <?php else:?>   
+                                    <li><a href="user/dashboard.php"><i class="fas fa-user"></i> <?=$_SESSION['user']['username']?></a></li>
+                                <?php endif;?>
                                 <li><i class="fas fa-sign-in-alt"></i> <a href="logout.php">disconnect</a></li>
                                 
                                 <?php else:?>

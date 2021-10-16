@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/96a458c9a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <!-- start header -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="title">
+                            <h2>dashboard</h2>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.php">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fas fa-bible"></i></span>
+                        <span class="title">Add Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="far fa-newspaper"></i></span>
+                        <span class="title">Add Article</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="far fa-comments"></i></span>
+                        <span class="title">Comments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../logout.php">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!--end header  -->
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"></div>
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Search here">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="../images/man.png" alt="Admin">
+                    </span>
+                </div>
+
+                <?php if (isset($_SESSION['user'])) :  ?>
+                    <span class="name"> <?= $_SESSION['user']['username'] ?>
+
+                    <?php endif;  ?>
+            </div>
+
+                    <!-- start card BOX -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="cardName">Users</div>
+                    </div>
+                    <div class="iconBox"><i class="fa fa-user " aria-hidden="true"></i></div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="cardName">categorys</div>
+                    </div>
+                    <div class="iconBox"><i class="fas fa-bible"></i></div>
+                </div>
+
+
+                <div class="card">
+                    <div>
+                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="cardName">Articles</div>
+                    </div>
+                    <div class="iconBox"><i class="far fa-newspaper"></i></div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="cardName">Comments</div>
+                    </div>
+                    <div class="iconBox"><i class="far fa-comments"></i></div>
+                </div>
+                
+            </div>
+            <!-- end card BOX -->
+
+            <div class="details">
+                <div class="recentComments">
+                    <div class="cardHeader">
+                        <h2>Recent Comments</h2>
+                        <a href="" class="btn">View All</a>
+                    </div>
+                    <!-- resulst Comments -->
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>date</td>
+                                <td>Comments</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($res as $user) : ?>
+                                <tr>
+                                    <td><?= $user['username'] ?></td>
+                                    <td><?= $user['created_at'] ?></td>
+                                    <td><?= $user['email'] ?></td>
+
+                                </tr>
+                            <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- end result Comments  -->
+
+                <!-- results users  -->
+                <div class="recentComments">
+                    <div class="cardHeader">
+                        <h2>Recent Uerss</h2>
+                        <a href="" class="btn">View All</a>
+                    </div>
+                    <!-- resulst Comments -->
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>date</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($res as $user) : ?>
+                                <tr>
+                                    <td><?= $user['username'] ?></td>
+                                    <td><?= $user['created_at'] ?></td>
+
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end result user -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/dashborad.js"></script>
+</body>
+
+</html>
