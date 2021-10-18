@@ -285,6 +285,102 @@ font-weight: 600;
     padding: 20px;
 }
 
+ .title{
+    text-align: center;
+
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0;
+}
+
+
+.form form label{
+    font-size: 1.4em;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 2% 0;
+}
+
+.form form input {
+    width: 30%;
+    padding: 15px;
+    margin: 5% 0;
+}
+
+.create-btn{
+    background: #03a9f4;
+    padding: 10px;
+    width: 20%;
+    color: #fff;
+    font-size: 1.1em;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+   
+} 
+
+
+.table-categories{
+    background: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-categories thead td{
+font-weight: 600;
+}
+.table-categories tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.table-categories tbody tr:last-child{
+    border-bottom: none;
+}
+
+.table-categories tbody tr:hover{
+    background: #03a9f4;
+    color: #fff ;
+}
+
+.table-categories tr td{
+  
+    padding:  9px 5px;
+}
+.table-categories tbody tr td a {
+    margin: 0 2% ;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+.table-categories tbody tr td a:first-child{
+    color: green;
+}
+
+.table-categories tbody tr td a:last-child{
+    color: red;
+}
+
+.table-categories tbody  tr td{
+    
+    font-weight: bold;
+}
+
+.table-categories table tbody tr td:last-child,
+.table-categories table thead tr td:last-child{
+    text-align: right;
+    overflow: hidden;
+}
+
+
+.table-categoriestbody tr td:nth-last-child(2),
+.table-categories thead tr td:nth-last-child(2){
+    text-align: center;
+    overflow: hidden;
+}
+
+
 
 @media (max-width: 992px) {
     .navigation{

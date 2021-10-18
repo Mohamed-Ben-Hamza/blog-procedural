@@ -30,4 +30,10 @@ $resultComments = $conn->prepare($sql);
 $resultComments->execute([]);
 $resComments = $resultComments->fetchAll(PDO::FETCH_ASSOC);
 
+
+$requestCategories="SELECT * from categoies";
+$resultCategories = $conn->prepare($requestCategories);
+$resultCategories->execute([]);
+$resCategories = $resultCategories->fetchAll(PDO::FETCH_ASSOC);
+
 include "dashboard.phtml";

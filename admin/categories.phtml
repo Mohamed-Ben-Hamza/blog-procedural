@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/96a458c9a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <!-- start header -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="dashboard.php">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="title">
+                            <h2>dashboard</h2>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.php">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.php">
+                        <span class="icon"><i class="fas fa-bible"></i></span>
+                        <span class="title">Add Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="far fa-newspaper"></i></span>
+                        <span class="title">Add Article</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="far fa-comments"></i></span>
+                        <span class="title">Comments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../logout.php">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!--end header  -->
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"></div>
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Search here">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="../images/man.png" alt="Admin">
+                    </span>
+                </div>
+
+                <?php if (isset($_SESSION['user'])) :  ?>
+                    <span class="name"> <?= $_SESSION['user']['username'] ?>
+
+                    <?php endif;  ?>
+            </div>
+
+                    <!-- start card BOX -->
+            <div class="title">
+                    <h1>Add Categories</h1>      
+                            <div class="form">
+                                <form action="" method="POST">
+                                <label for=""> category name</label>
+                                <input type="text" name="categorie" placeholder=" type of category">
+                                <button class="create-btn" name="save">Create Categories</button>
+                                </form>
+                            </div>
+
+
+                            <div>
+                                <h2>List Categories</h2>
+
+                                <table class="table-categories">
+                                    <thead>
+                                        <tr>
+                                            <td>Type</td>
+                                            <td>Edit/Delete</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php if(empty($resCategories)):?>    
+                                    <p>list Is empty</p>
+                                    <?php endif; ?>
+                                        <?php foreach ($resCategories as $category):?>
+                               
+                                         <tr>
+                                             <td><?=$category['categorie']?></td>
+                                             <td><a href="editCategory.php?id=<?php echo $category['id'];?>"><i class="fas fa-edit"></i></a> <a href="deleteCategory.php?id=<?php echo $category['id'];?>"><i class="fas fa-trash"></i></a></td>
+                                         </tr>
+                                        <?php endforeach ; ?>    
+                                    </tbody>
+                                </table>
+                            </div>
+            </div>
+    </div>
+    </div>
+
+    <script src="../js/dashborad.js"></script>
+</body>
+
+</html>

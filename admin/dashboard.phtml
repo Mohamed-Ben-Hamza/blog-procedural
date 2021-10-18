@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="categories.php">
                         <span class="icon"><i class="fas fa-bible"></i></span>
                         <span class="title">Add Categories</span>
                     </a>
@@ -98,7 +98,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="numbers"><?= count($resCategories) ?></div>
                         <div class="cardName">categorys</div>
                     </div>
                     <div class="iconBox"><i class="fas fa-bible"></i></div>
@@ -141,7 +141,9 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
                             <?php foreach ($res as $user) : ?>
+                             
                                 <tr>
                                     <td><?= $user['username'] ?></td>
                                     <td><?= $user['created_at'] ?></td>
