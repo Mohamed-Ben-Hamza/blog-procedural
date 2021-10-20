@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a href="users.php">
+                    <a href="">
                         <span class="icon"><i class="fas fa-user"></i></span>
                         <span class="title">Users</span>
                     </a>
@@ -88,36 +88,34 @@
 
                     <!-- start card BOX -->
             <div class="title">
-                    <h1>Add Categories</h1>      
-                            <div class="form">
-                                <form action="" method="POST">
-                                <label for=""> category name</label>
-                                <input type="text" name="categorie" placeholder=" type of category">
-                                <button class="create-btn" name="save">Create Categories</button>
-                                </form>
-                            </div>
-
-
+                 
                             <div>
-                                <h2>List Categories</h2>
+                                <h2>List Users</h2>
 
                                 <table class="table-categories">
                                     <thead>
                                         <tr>
-                                            <td>Type</td>
-                                            <td>Edit/Delete</td>
+                                            <td>id</td>
+                                            <td>email</td>
+                                            <td>UserName</td>
+                                            <td>Delete</td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php if(empty($resCategories)):?>    
+                                    <?php if(empty($resUsers)):?>    
                                     <p>list Is empty</p>
                                     <?php endif; ?>
-                                        <?php foreach ($resCategories as $category):?>
-                               
+                                        <?php foreach ($resUsers as $user):?>
+                  
+                                            
+                                        
                                          <tr>
-                                             <td><?=$category['categorie']?></td>
-                                             <td><a href="editCategory.php?id=<?php echo $category['id'];?>"><i class="fas fa-edit"></i></a> <a href="deleteCategory.php?id=<?php echo $category['id'];?>"><i class="fas fa-trash"></i></a></td>
+                                             <td><?=$user['id']?></td>
+                                             <td><?=$user['email']?></td>
+                                             <td><?=$user['username']?></td>
+                                             <td><a href="deleteUser.php?id=<?php echo $user['id'];?>"><i class="fas fa-trash"></i></a></td>
                                          </tr>
+                                             
                                         <?php endforeach ; ?>    
                                     </tbody>
                                 </table>
