@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
   
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins',serif;
 }
 body{
 overflow-x: hidden
@@ -382,7 +382,60 @@ font-weight: 600;
     overflow: hidden;
 }
 
+.form-article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-article label{
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
 
+.form-article input[type=text]{
+    padding-left: 2%;
+}
+
+.form-article input,.form-article textarea,.form-article select {
+    width: 60%;
+    margin: 1% auto;
+    padding: 1% 0;
+    font-size: 1.1em;
+}
+.form-article select{
+text-transform: capitalize;
+text-align: center;
+font-weight: 700;
+
+
+}
+.form-article select option{
+    background: #03a9f4;
+    color: #fff;
+}
+
+.form-article textarea {
+    resize: none;
+    height: 30vh;
+    padding-left: 2%;
+}
+
+.form-article button{
+    width: 25%;
+    padding: 1%;
+    background: #03a9f4;
+    border: 0;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+/* medium size */
 
 @media (max-width: 992px) {
     .navigation{

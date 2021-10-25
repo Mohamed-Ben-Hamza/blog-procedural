@@ -8,4 +8,3 @@ toggle.addEventListener('click',function(){
         element.classList.toggle('hide')
     });
 })
-

@@ -1,5 +1,6 @@
 <?php
-include "database.php";
+include $_SERVER["DOCUMENT_ROOT"].'/blog/database.php';
+
 
 session_start();
 

@@ -1,8 +1,12 @@
 <?php
-include "../database.php";
+include $_SERVER["DOCUMENT_ROOT"].'/blog/database.php';
  
 
 session_start();
+if(!$_SESSION['user']){
+    header('location:../sign_in.php');
+}
+
 
 if(isset($_SESSION['user'])){
     if($_SESSION['user']){
