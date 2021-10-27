@@ -1,6 +1,6 @@
 <?php
 
-
+$baseUrl="http://localhost/blog/";
 
 $servername = "localhost";
 $username = "root";

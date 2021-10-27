@@ -41,4 +41,26 @@ $resultArticle->execute([$titlePost, $descriptionPost, $picture, $_SESSION['user
 
 }
 
+
+
+
+
+
+$requestArticles="SELECT * from articles ";
+$resultArticles = $conn->prepare($requestArticles);
+$resultArticles->execute([]);
+$resArticles = $resultArticles->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+function readMore($string,$lenght){
+
+    if(strlen($string) > $lenght){
+        $stringCut = substr($string,0,$lenght);
+        $string = substr($stringCut,0, strrpos($stringCut,' ')). " ...";
+       return(substr($string,0,$lenght));
+    }
+    return $string;
+}
+
 include "addArticle.phtml";

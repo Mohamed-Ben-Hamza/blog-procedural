@@ -90,15 +90,15 @@
             <div class="title">
                  
                             <div>
-                                <h2>Add Article </h2>
+                                <h2>Edit Article </h2>
 
                             <form  class="form-article" action="" method="post" enctype="multipart/form-data">
                               <label for="">Title</label>
-                              <input type="text" name="title" placeholder="Title Of Post ">
+                              <input type="text" name="title" placeholder="Title Of Post " value="<?=$valueArticles['titre']?>">
                               <label for="">description</label>
-                              <textarea name="description" id="" placeholder="Description Of The Post" ></textarea>
+                              <textarea name="description" id="" placeholder="Description Of The Post"  ><?=$valueArticles['description']?></textarea>
                               <label for="">Upload image</label>
-                              <input type="file" name="image" id="">
+                              <input type="file" name="image"  >
 
                             <select name="category" id="">
                                 <?php foreach ($resCategories as $category):?>
@@ -106,49 +106,14 @@
 
                                  <?php endforeach;?>   
                             </select>
-                            <button name="post">Post</button>
+                            <button name="update"> Update Post</button>
                             </form>    
                            
                             </div>
             </div>
 
 
-            <div class="">
-                <table class="list-articles">
-                    <caption>Lists Articles</caption>
-                    <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>Title Artcile</td>
-                            <td>Description</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
-                            <td>Publish Artcile</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php foreach ($resArticles as $article) : ?>
-                            <tr>
-                                <td><?=$article['id']?></td>
-                                <td><?=$article['titre']?></td>
-                                <td> <p> <?php echo readMore($article['description'],15)?> </p></td>
-                                <td><a id="edit" href="editArticle.php?id=<?php echo $article['id'];?>"><i class="fas fa-edit"></i></a></td>
-                                <td><a id="trash" href="deleteArticle.php?id=<?php echo $article['id'];?>"><i class="fas fa-trash"></i></a></td>
-
-                                <?php if($article['publish']!=1) :?>
-                                <td><a href="publishArticle.php?id=<?php echo $article[0];?>"><i class="fas fa-check-circle"></i></a></td>
-                                <?php else : ?>
-                                    <td><p class="published">Published</p></td> 
-
-                                <?php endif;?>    
-                            </tr>
-
-                        <?php endforeach ;?>    
-                    </tbody>
-                </table>                                
-
-            </div>
+      
     </div>
     </div>
 

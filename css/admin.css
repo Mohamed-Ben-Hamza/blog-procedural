@@ -325,33 +325,66 @@ font-weight: 600;
 } 
 
 
-.table-categories{
+.table-categories,.list-articles{
     background: #fff;
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.table-categories thead td{
+.table-categories thead td,.list-articles thead td {
 font-weight: 600;
 }
-.table-categories tr{
+.table-categories tr,.list-articles tr{
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.table-categories tbody tr:last-child{
+.table-categories tbody tr:last-child,.list-articles tbody tr:last-child{
     border-bottom: none;
 }
 
-.table-categories tbody tr:hover{
+.table-categories tbody tr:hover,.list-articles tbody tr:hover{
     background: #03a9f4;
     color: #fff ;
 }
 
-.table-categories tr td{
+.table-categories tr td,.list-articles tr td{
   
     padding:  9px 5px;
 }
-.table-categories tbody tr td a {
+
+.list-articles tbody tr td a{
+font-size: 1.4em;
+text-align: center;
+width: 10% ;
+margin: auto;
+}
+
+#edit{
+    color: green;
+}
+
+#trash
+{
+    color: red;
+}
+
+.published{
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.list-articles tbody tr td a:last-child{
+    color: limegreen;
+    display: block;
+    
+    margin: 0 10%;
+}
+
+
+
+
+.table-categories tbody tr td a  {
     margin: 0 2% ;
     text-decoration: none;
     font-size: 1.3em;
@@ -381,6 +414,8 @@ font-weight: 600;
     text-align: center;
     overflow: hidden;
 }
+
+
 
 .form-article{
     display: flex;

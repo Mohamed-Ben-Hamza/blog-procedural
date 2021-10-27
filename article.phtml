@@ -54,65 +54,19 @@
             </div>
           
         </header>
-    <!-- end header -->
-    
-    
-    <!-- start main  -->
 
-    <main>
-  
-    <section>
-  
-        <ul class="categories">
-        <h2>Categories of articles</h2>
+        <main class="self-artcile">
+         
+        <article class="aa">
         
-          <?php foreach ($resCategories as $category): ?>
-          
-          <li><a href=""><?= $category['categorie']?> ( <?=coutCategories($category['categorie'])?>) </a></li>
-          <?php endforeach ;?>
-        </ul>
+           <img  class="fullwidth" src="<?=$baseUrl."images/postsImages/".$articles['image']?>" alt="">  
 
-    </section>  
-
-    <section>
-    <article class="artcile">   
-        
-    <?php foreach ($articles as $article):?>                                
-   
-
-    <div class="card">
-    <h2 class="Categorie"><?=$article['categorie']?></h2>
-    <img src="<?=$baseUrl."images/postsImages/".$article['image']?>" alt="">
-  <div class="container">
-
-  
-  <h3><?=$article['titre']?></h3>
-  <p><?= readMore($article['description'],150) ?></p>
-  <div class="readMore">
-        <a href="article.php?id=<?=$article[0]?>">Read More</a>
-       <span><?=$article['date']?></span>
-       </div> 
-  </div>
-</div>
-    
-
-        
-    <?php endforeach ; ?>
- 
-    </article>
-        
-    </section> 
-    
-  
-
-
-    </main>
+         
+           <p> <?=$articles['titre']?> </p>
+           <p> <?=$articles['description']?> </p>
+           <p> <?=$articles['date']?> </p>
+        </article>
 
 
 
-
-    <!-- end main  -->
-
-    <script src="js/main.js "></script>
-</body>
-</html>
+        </main>

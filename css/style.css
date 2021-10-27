@@ -28,7 +28,7 @@ a{
 /* start header */
 
 .header{
-    position: relative;
+
     top: 0;
     height:90vh;
 }
@@ -38,7 +38,7 @@ a{
     letter-spacing: 2px;
     font-size: 1.3em;
 }
-nav{position: relative;  
+nav{
 
     padding: 1% 0;
     font-size: 1.2em;
@@ -92,11 +92,8 @@ nav{position: relative;
 }
 
 .banner{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
+  
+    z-index: 0; 
     
     background-image:  url(../images/banerblog.jpg) ;
     background-position:  top ;
@@ -112,11 +109,136 @@ nav{position: relative;
 
 
 
+/* main */
+
+main {
+    color: #111;
+    margin: 3% 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    
+  
+}
+main section:first-child{
+    background: red;
+    width: 50%;
+}
+main section:first-child h2{
+    text-align: center;
+    margin-top: 5% ;
+}
+
+main article{
+    
+  display: flex;
+  flex-wrap: wrap;
+
+}
+main article div {
+    flex-basis: 35%;
+    margin: 2% 1%;
+    height:90vh;
+    
+   
+}
+.boxArticle{
+    padding: 2%;
+    border: 2px solid #111
+}
+main article div img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+  
+}
 
 
 
+main article div h3 {
+    font-size: 1.5em;
+    margin: 3% 0;
+}
+
+main article div p {
+    line-height: 2;
+    font-size: 1.15em;
+    margin: 3% 0;
+}
 
 
+main article div a {
+    background:#03a9f4;
+    padding:  2%;
+    display: block;
+    
+}
+.readMore span {
+    display: block;
+    font-size: 1.1em;
+}
+
+.readMore span,.readMore a {
+    margin:  5% 0;
+}
+.readMore{
+    border-top: 2px solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 5% 0;
+}
+
+.Categorie{
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    margin: 5% 0;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 20px rgba(0,0,0,0.2);
+    transform: translateY(-40px);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  .categories{
+      width: 100%;
+      
+  
+  }
+
+  .categories li {
+      padding: 3%;
+      font-size: 1.4em;
+      list-style: none;
+      margin: 5% 1%;
+  }
+  
+
+  .categories li a{
+      color: #111;
+  }
+
+  .fullwidth{
+      width: 50%;
+      margin: auto;
+  }
+  
+
+/* end main */
 
 
 
@@ -147,6 +269,7 @@ background: rgba(0, 0, 0, 0.6);
 }
 
 .contact-form h2{
+    color: #fff!important;
     text-align: center;
     text-transform: uppercase;
     padding: 10% 0;

@@ -35,6 +35,13 @@ $resultComments->execute([]);
 $resComments = $resultComments->fetchAll(PDO::FETCH_ASSOC);
 
 
+$requestArticles="SELECT * from articles";
+$resultArticles = $conn->prepare($requestArticles);
+$resultArticles->execute([]);
+$resArticles = $resultArticles->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 $requestCategories="SELECT * from categoies";
 $resultCategories = $conn->prepare($requestCategories);
 $resultCategories->execute([]);
