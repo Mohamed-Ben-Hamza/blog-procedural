@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="comment.php">
                         <span class="icon"><i class="far fa-comments"></i></span>
                         <span class="title">Comments</span>
                     </a>
@@ -115,7 +115,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers"><?= count($resultCount) ?></div>
+                        <div class="numbers"><?= count($resComments) ?></div>
                         <div class="cardName">Comments</div>
                     </div>
                     <div class="iconBox"><i class="far fa-comments"></i></div>
@@ -128,7 +128,7 @@
                 <div class="recentComments">
                     <div class="cardHeader">
                         <h2>Recent Comments</h2>
-                        <a href="" class="btn">View All</a>
+                        <a href="comment.php" class="btn">View All</a>
                     </div>
                     <!-- resulst Comments -->
 
@@ -142,12 +142,12 @@
                         </thead>
                         <tbody>
                             
-                            <?php foreach ($res as $user) : ?>
+                            <?php foreach ($resComments as $comment) : ?>
                              
                                 <tr>
-                                    <td><?= $user['username'] ?></td>
-                                    <td><?= $user['created_at'] ?></td>
-                                    <td><?= $user['email'] ?></td>
+                                    <td><?= $comment['pseudo'] ?></td>
+                                    <td><?= $comment['date_comment'] ?></td>
+                                    <td><?= $comment['comment'] ?></td>
 
                                 </tr>
                             <?php endforeach; ?>

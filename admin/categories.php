@@ -17,6 +17,7 @@ if(isset($_SESSION['user'])){
 
     else{
         header('location:../sign_in.php');
+        exit;
     }
 }
 

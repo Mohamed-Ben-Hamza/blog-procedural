@@ -15,17 +15,10 @@
                 <nav>
                     <div class="logo"><a href="index.php"> Blog </a></div>
                     
-                    <div class="menu hide nav-list">
-                        <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Services</a></li>
-                            <li><a href="">Contact</a></li>
-                        </ul>
-                    </div>
+                   
                     <div class="register hide nav-list">
                     <ul class="list-register">
-                       
+                    <li><a href="index.php">Home</a></li>
                             <?php if(isset($_SESSION['user'])):?>
                                 <?php if($_SESSION['user']['admin']==1):?>
                                     
@@ -56,17 +49,51 @@
         </header>
 
         <main class="self-artcile">
-         
-        <article class="aa">
+        <article class="artcile ">   
+
+        <div class="full">
+      
+        <img  src="<?=$baseUrl."/images/postsImages/".$articles['image']?>" alt="">
+      <div class="container">
+    
+     
+      <h2> <?=$articles['titre']?> </h2>
+      <p class="description-categorie"> <?=$articles['description']?> <p class="date">   <?=$articles['date']?> </p> </p>
+      </div>
+    </div>
         
-           <img  class="fullwidth" src="<?=$baseUrl."images/postsImages/".$articles['image']?>" alt="">  
-
-         
-           <p> <?=$articles['titre']?> </p>
-           <p> <?=$articles['description']?> </p>
-           <p> <?=$articles['date']?> </p>
+     
         </article>
+                              
 
-
+                                    <article class="comment">
+                                    
+                                        <form action="" method="POST">
+                                      
+                                        <div>
+                                            <textarea id="" cols="30" rows="10" placeholder="Your Comment ........" name="comment"></textarea>
+                                            <button name="post_comment">Comment</button>
+                                            </div>
+                                        </form>
+                                
+                                        <?php foreach ($comments as $comment):?>
+                                        <div class=comment-user>
+                                      
+                                          <div class="user-info">  
+                                        <img src="images/avatar.png" alt="">
+                                        <label for=""><?=$comment['pseudo']?></label>
+                                        <span><?=dateFormate($comment['date_comment'])?></span>
+                                        <?php if(isset($_SESSION['user'])): ?>
+                                            <?php if ($comment['pseudo']==$_SESSION['user']['username']):?>
+                                        <a href=<?= "deleteCommentArticle.php?postId=" . $_GET['id'] ."&id=" . $comment['id']?>><i class="fas fa-trash"></i></a>
+                                        <?php endif ;?>
+                                        <?php endif ;?>
+                                        </div>
+                                        <p><?=$comment['comment']?></p>
+                                        </div>
+                                    
+                                        <?php endforeach ;?>
+                               
+                                    </article>
 
         </main>

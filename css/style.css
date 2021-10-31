@@ -111,7 +111,7 @@ nav{
 
 /* main */
 
-main {
+.main-home {
     color: #111;
     margin: 3% 0;
     display: flex;
@@ -121,22 +121,22 @@ main {
     
   
 }
-main section:first-child{
+.main-home section:first-child{
     background: red;
     width: 50%;
 }
-main section:first-child h2{
+.main-home section:first-child h2{
     text-align: center;
     margin-top: 5% ;
 }
 
-main article{
+.main-home article{
     
   display: flex;
   flex-wrap: wrap;
 
 }
-main article div {
+.main-home article div {
     flex-basis: 35%;
     margin: 2% 1%;
     height:90vh;
@@ -147,7 +147,7 @@ main article div {
     padding: 2%;
     border: 2px solid #111
 }
-main article div img {
+.main-home article div img {
     width: 100%;
     height: 40vh;
     object-fit: cover;
@@ -156,19 +156,19 @@ main article div img {
 
 
 
-main article div h3 {
+.main-home article div h3 {
     font-size: 1.5em;
     margin: 3% 0;
 }
 
-main article div p {
+.main-home article div p {
     line-height: 2;
     font-size: 1.15em;
     margin: 3% 0;
 }
 
 
-main article div a {
+.main-home article div a {
     background:#03a9f4;
     padding:  2%;
     display: block;
@@ -232,12 +232,106 @@ main article div a {
       color: #111;
   }
 
-  .fullwidth{
-      width: 50%;
-      margin: auto;
-  }
-  
 
+  .full{
+      margin: 2%  auto 0;
+      color: #111;
+        width: 70%;
+        
+        box-shadow: 0 4px 8px 0 rgba(128, 100, 100, 0.9);
+        transition: 0.3s;
+  }
+  .full img{
+      width: 100%;
+ 
+    object-fit: cover;
+  
+  }
+
+  .full h2{
+      margin: 2% 0 ;
+  }
+
+  .full p {
+      font-size: 1.2em;
+      line-height: 2;
+  }
+  .date{
+      margin-right: auto;
+  }
+
+.comment{
+    background: #4a5e67;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 0;
+    padding: 1% 0; 
+   
+}
+
+.comment form textarea {
+    margin: 1% 0;
+    width: 100%;
+    height: 10vh;
+    resize: none;
+    background: rgb(236, 234, 234);
+    padding-left: 3%;
+    border: 0;
+    outline: 0;
+    font-size: 1.2em;
+
+}
+.comment form textarea::placeholder{
+    padding-top: 2%;
+    
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+.comment form textarea:focus{
+    padding-top: 2%;
+    
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+
+.comment form  button{
+    display: block;
+    margin:1% 0 1% auto;
+    padding: 1.1% 5%;
+
+}
+.user-info{
+    margin: 2% 0 ;
+    display: flex;
+    align-items: center;
+}
+.user-info label{
+    margin:  0 2% ;
+}
+
+.user-info a{
+    margin-left: auto;
+    font-size: 1.2em;
+}
+
+
+.user-info a:hover{
+    color: red;
+}
+
+.user-info img{
+    height: 50px;
+    width: 50px;
+    border: 50%;
+}  
+.comment-user{
+    margin: 1%;
+}
+
+.comment-user p {
+    background-color: gray;
+    padding: 2%;
+}
 /* end main */
 
 
