@@ -16,14 +16,10 @@ if(isset($_SESSION['user'])){
         exit;
     }
 }
-
-
-
 $requestCategories="SELECT * from categoies ";
 $resultCategories = $conn->prepare($requestCategories);
 $resultCategories->execute([]);
 $resCategories = $resultCategories->fetchAll(PDO::FETCH_ASSOC);
-
 
 if(isset($_POST['post'])){
     $titlePost=$_POST['title'];
@@ -42,25 +38,4 @@ $resultArticle->execute([$titlePost, $descriptionPost, $picture, $_SESSION['user
 }
 
 
-
-
-
-
-$requestArticles="SELECT * from articles ";
-$resultArticles = $conn->prepare($requestArticles);
-$resultArticles->execute([]);
-$resArticles = $resultArticles->fetchAll();
-
-
-
-function readMore($string,$lenght){
-
-    if(strlen($string) > $lenght){
-        $stringCut = substr($string,0,$lenght);
-        $string = substr($stringCut,0, strrpos($stringCut,' ')). " ...";
-       return(substr($string,0,$lenght));
-    }
-    return $string;
-}
-
-include "addArticle.phtml";
+include "dashboard.phtml";
