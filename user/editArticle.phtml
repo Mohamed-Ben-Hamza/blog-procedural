@@ -31,14 +31,15 @@
                     </a>
                 </li>
 
-          
+            
+       
                 <li>
-                    <a href="dashboard.php">
+                    <a href="addArticle.php">
                         <span class="icon"><i class="far fa-newspaper"></i></span>
                         <span class="title">Add Article</span>
                     </a>
                 </li>
-      
+            
                 <li>
                     <a href="../logout.php">
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
@@ -74,15 +75,15 @@
             <div class="title">
                  
                             <div>
-                                <h2>Add Article </h2>
+                                <h2>Edit Article </h2>
 
                             <form  class="form-article" action="" method="post" enctype="multipart/form-data">
                               <label for="">Title</label>
-                              <input type="text" name="title" placeholder="Title Of Post " required="">
+                              <input type="text" name="title" placeholder="Title Of Post " value="<?=$valueArticles['titre']?>">
                               <label for="">description</label>
-                              <textarea name="description" id="" placeholder="Description Of The Post" required="" ></textarea>
+                              <textarea name="description" id="" placeholder="Description Of The Post"  ><?=$valueArticles['description']?></textarea>
                               <label for="">Upload image</label>
-                              <input type="file" name="image" id="" required="">
+                              <input type="file" name="image"  >
 
                             <select name="category" id="">
                                 <?php foreach ($resCategories as $category):?>
@@ -90,41 +91,14 @@
 
                                  <?php endforeach;?>   
                             </select>
-                            <button name="post">Post</button>
+                            <button name="update"> Update Post</button>
                             </form>    
                            
                             </div>
             </div>
 
 
-
-
-         
-
-         <div>
-             <table class="list-articles">
-                 <thead>
-                     <tr>
-                         <td>article</td>
-                         <td>description</td>
-                         <td>Edit</td>
-                         <td>Delete</td>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <?php foreach ($resArticleUser as $article ):?>
-                        <tr>
-                            <td><?=$article['titre']?></td>
-                            <td><?= readMore($article['description'],50)?></td>
-                            <td><a id="edit" href="editArticle.php?id=<?php echo $article['id'];?>"><i class="fas fa-edit"></i></a></td>
-                            <td><a id="trash" href="deleteArticle.php?id=<?php echo $article['id'];?>"><i class="fas fa-trash"></i></a></td>
-                            </tr>
-                     <?php endforeach ;?>   
-                 </tbody>
-             </table>
-         </div>
-
-          
+      
     </div>
     </div>
 

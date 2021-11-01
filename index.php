@@ -40,6 +40,9 @@ function coutCategories($posts){
 
 
 
+
+
+
 function readMore($string,$lenght){
 
     if(strlen($string) > $lenght){

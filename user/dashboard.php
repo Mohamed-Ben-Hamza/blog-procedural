@@ -36,6 +36,20 @@ $resultArticle = $conn->prepare($sql);
 $resultArticle->execute([$titlePost, $descriptionPost, $picture, $_SESSION['user']['id'] , $categoryPost]);  
 
 }
+function readMore($string,$lenght){
+
+    if(strlen($string) > $lenght){
+        $stringCut = substr($string,0,$lenght);
+        $string = substr($stringCut,0, strrpos($stringCut,' ')). " ...";
+       return(substr($string,0,$lenght));
+    }
+    return $string;
+}
+
+$requestUser="SELECT* FROM articles  WHERE `user_id`=?";
+$resultArticleUser = $conn->prepare($requestUser);
+$resultArticleUser->execute([$_SESSION['user']['id']]);
+$resArticleUser = $resultArticleUser->fetchAll(PDO::FETCH_ASSOC);
 
 
 include "dashboard.phtml";

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/96a458c9a5.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?=$baseUrl."/css/style.css"?>">
 </head>
 <body>
@@ -56,13 +57,14 @@
     <main class="main-home">
   
     <section>
-  
+    <h2>Categories of articles</h2>
         <ul class="categories">
-        <h2>Categories of articles</h2>
+                                     
         
           <?php foreach ($resCategories as $category): ?>
           
-          <li><a href=""><?= $category['categorie']?> ( <?=coutCategories($category['categorie'])?>) </a></li>
+          <li><a href="" class="linkAjax" data-id=<?=$category['id']?>><?= $category['categorie']?>(<?=coutCategories($category['categorie'])?>) </a></li>
+         
           <?php endforeach ;?>
         </ul>
 
@@ -98,7 +100,7 @@
     </section> 
     
   
-
+    <button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
 
     </main>
 
@@ -107,6 +109,19 @@
 
     <!-- end main  -->
 
+    <!-- footer -->
+    <footer class="footer">
+        <div class="icons">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-linkedin"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+            <p class="company-name">
+                ABC &copy; 2021, ALL Rights Reserved
+            </p>
+        </div>
+    </footer>
+    <!-- end footer -->
     <script src="js/main.js "></script>
 </body>
 </html>
